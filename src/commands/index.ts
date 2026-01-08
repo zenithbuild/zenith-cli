@@ -9,6 +9,7 @@ import { preview, type PreviewOptions } from './preview'
 import { build, type BuildOptions } from './build'
 import { add, type AddOptions } from './add'
 import { remove } from './remove'
+import { create } from './create'
 import * as logger from '../utils/logger'
 
 export interface Command {
@@ -19,6 +20,15 @@ export interface Command {
 }
 
 export const commands: Command[] = [
+    {
+        name: 'create',
+        description: 'Create a new Zenith project',
+        usage: 'zenith create [project-name]',
+        async run(args) {
+            const projectName = args[0]
+            await create(projectName)
+        }
+    },
     {
         name: 'dev',
         description: 'Start development server',

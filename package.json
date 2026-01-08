@@ -1,10 +1,10 @@
 {
-    "name": "@zenith/cli",
-    "version": "0.1.0",
+    "name": "@zenithbuild/cli",
+    "version": "0.2.0",
     "description": "CLI for Zenith framework - dev server, build tools, and plugin management",
     "type": "module",
     "bin": {
-        "zenith": "./bin/zenith.ts"
+        "zenith": "./bin/zenith"
     },
     "main": "./src/index.ts",
     "types": "./src/index.ts",
@@ -19,6 +19,9 @@
         "src"
     ],
     "scripts": {
+        "dev": "bun dev",
+        "build": "bun build",
+        "start": "bun run build && bun run dev",
         "test": "bun test"
     },
     "keywords": [
@@ -28,11 +31,18 @@
         "ssg",
         "ssr"
     ],
+    "author": "Zenith Team",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:zenithbuild/zenith-cli.git"
+    },
+    "private": false,
     "peerDependencies": {
-        "@zenith/bundler": "^0.1.0"
+        "@zenithbuild/core": "^0.1.0"
     },
     "devDependencies": {
         "@types/bun": "latest"
-    }
+    },
+    "dependencies": {}
 }
